@@ -1,0 +1,320 @@
+﻿@using Buriza.Web.Components.Common
+
+@page "/"
+
+@namespace Buriza.Web.Components.Pages
+
+<PageTitle>Home</PageTitle>
+
+<section class="container mx-auto px-4 py-6! mb-17! space-y-4!">
+    <div class="w-full flex items-center justify-between">
+        <div class="w-24">
+            <MudImage
+                Src="/images/logo/buriza_logo_dark.webp" 
+                Alt="buriza logo"
+            />
+        </div>
+        <div class="w-max">
+            <MudText Color="Color.Success" Class="flex items-center gap-1! text-xs! sm:text-sm!">
+                <span class="inline-block p-[2px]! rounded-full xl:p-1 relative">
+                    <div class="w-2 left-[2px] top-[2px] absolute aspect-square bg-[var(--mud-palette-success)]/60 delay-150! rounded-full animate-ping sm:w-2 xl:p-1!"/>
+                    <div class="w-2 aspect-square bg-[var(--mud-palette-success)] rounded-full sm:w-2"/>
+                </span>
+                <span class="lg:ml-2">
+                    Block <span >#12345</span>
+                </span>
+            </MudText>
+        </div>
+    </div>
+    <div>
+       <MudCard
+            Class="bg-[var(--mud-palette-primary)]! rounded-2xl! p-4! space-y-2!"
+       >
+            <div class="w-full flex items-center justify-between">
+                <div>
+                    <MudSelect
+                        T="string"
+                        @bind-Value="@SelectedAccount"
+                        AdornmentIcon="@Icons.Material.Filled.KeyboardArrowDown"
+                        Underline="false"
+                        Class="[&_.mud-input-slot]:py-0! [&_.mud-input-slot]:w-max! [&_.mud-icon-root]:text-[var(--mud-palette-text-primary)]! [&_.mud-input-slot]:font-semibold!"
+                    >
+                        <MudSelectItem Value='@("Account 1")'>
+                            Account 1
+                        </MudSelectItem>
+                        <MudSelectItem Value='@("Account 2")'>
+                            Account 2
+                        </MudSelectItem>
+                    </MudSelect>
+                    <div class="flex items-center gap-2">
+                        <MudText Class="text-xs!">
+                            addr1q9rvp...az138441s15a
+                        </MudText>
+                        <MudIconButton 
+                            Icon="@Icons.Material.Filled.ContentCopy"
+                            Class="[&_.mud-icon-root]:text-xs! text-[var(--mud-palette-text-primary)]! p-0!"
+                        />
+                    </div>
+                </div>
+                <div class="rounded-full! overflow-hidden size-10!">
+                    <MudImage
+                        Src="/images/misc/profile_sample.webp"
+                        Alt="profile image"
+                    />
+                </div>
+            </div>
+            <MudText Class="text-4xl! font-bold!">
+                $ 1,152.23
+            </MudText>
+            <div class="w-full flex items-center justify-between">
+                <MudChip 
+                    T="string"
+                    Class="text-[var(--mud-palette-success)]! bg-[#2C2D42]! h-4! px-[6px]! m-0! text-[10px]! font-medium"
+                >
+                    +$41,1234.95
+                </MudChip>
+                <MudChip 
+                    T="string"
+                    Class="text-[var(--mud-palette-success)]! bg-[#2C2D42]! h-4! px-[6px]! m-0! text-[10px]! font-medium"
+                >
+                    +28.00%
+                </MudChip>
+            </div>
+       </MudCard> 
+    </div>
+    <div>
+        <MudTabs
+            Centered="true"
+            Class="[&_.mud-tabs-tabbar]:bg-transparent!"
+        >
+            <MudTabPanel
+                Text="Token"
+                Icon="@IconService.TokenIcon"
+                Class="min-w-[144px]!"
+            >
+                <MudText
+                    Class="font-semibold! mt-2!"
+                >
+                    Portfolio
+                </MudText>
+                <div class="mt-2! flex flex-col gap-2">
+                    @for (int i = 0; i < 3; i++)
+                    {
+                        <MudCard
+                            id="@i"
+                            Class="bg-[#2B2B4A80]! p-4! flex-row! items-center! justify-between!"
+                        >
+                            <div class="flex items-center gap-2">
+                                <div>
+                                    <MudImage
+                                        Src="/images/misc/token/ada.webp"
+                                        Alt="nft image"
+                                    />
+                                </div>
+                                <div>
+                                    <MudText Class="font-semibold!">
+                                        ADA
+                                    </MudText>
+                                    <MudText Class="text-[var(--mud-palette-success)]! text-[10px]!">
+                                        12.18%
+                                    </MudText>
+                                </div>
+                            </div>
+                            <div>
+                                <MudImage
+                                    Src="/images/misc/graph_placeholder.webp"
+                                    Alt="graph placeholder"
+                                />
+                            </div>
+                            <div>
+                                <MudText Class="font-semibold!">
+                                    12,023.54
+                                </MudText>
+                                <MudText Class="text-xs!">
+                                    ≈ $52,313.42
+                                </MudText>
+                            </div>
+                        </MudCard>
+                        <MudCard
+                            Class="bg-[#2B2B4A80]! p-4! flex-row! items-center! justify-between!"
+                        >
+                            <div class="flex items-center gap-2">
+                                <div>
+                                    <MudImage
+                                        Src="/images/misc/token/angels.webp"
+                                        Alt="nft image"
+                                    />
+                                </div>
+                                <div>
+                                    <MudText Class="font-semibold!">
+                                        ADA
+                                    </MudText>
+                                    <MudText Class="text-[var(--mud-palette-success)]! text-[10px]!">
+                                        12.18%
+                                    </MudText>
+                                </div>
+                            </div>
+                            <div>
+                                <MudImage
+                                    Src="/images/misc/graph_placeholder.webp"
+                                    Alt="graph placeholder"
+                                />
+                            </div>
+                            <div>
+                                <MudText Class="font-semibold!">
+                                    12,023.54
+                                </MudText>
+                                <MudText Class="text-xs!">
+                                    ≈ $52,313.42
+                                </MudText>
+                            </div>
+                        </MudCard>
+                        <MudCard
+                            Class="bg-[#2B2B4A80]! p-4! flex-row! items-center! justify-between!"
+                        >
+                            <div class="flex items-center gap-2">
+                                <div>
+                                    <MudImage
+                                        Src="/images/misc/token/chad.webp"
+                                        Alt="nft image"
+                                    />
+                                </div>
+                                <div>
+                                    <MudText Class="font-semibold!">
+                                        ADA
+                                    </MudText>
+                                    <MudText Class="text-[var(--mud-palette-success)]! text-[10px]!">
+                                        12.18%
+                                    </MudText>
+                                </div>
+                            </div>
+                            <div>
+                                <MudImage
+                                    Src="/images/misc/graph_placeholder.webp"
+                                    Alt="graph placeholder"
+                                />
+                            </div>
+                            <div>
+                                <MudText Class="font-semibold!">
+                                    12,023.54
+                                </MudText>
+                                <MudText Class="text-xs!">
+                                    ≈ $52,313.42
+                                </MudText>
+                            </div>
+                        </MudCard>
+                        <MudCard
+                            Class="bg-[#2B2B4A80]! p-4! flex-row! items-center! justify-between!"
+                        >
+                            <div class="flex items-center gap-2">
+                                <div>
+                                    <MudImage
+                                        Src="/images/misc/token/charles.webp"
+                                        Alt="nft image"
+                                    />
+                                </div>
+                                <div>
+                                    <MudText Class="font-semibold!">
+                                        ADA
+                                    </MudText>
+                                    <MudText Class="text-[var(--mud-palette-success)]! text-[10px]!">
+                                        12.18%
+                                    </MudText>
+                                </div>
+                            </div>
+                            <div>
+                                <MudImage
+                                    Src="/images/misc/graph_placeholder.webp"
+                                    Alt="graph placeholder"
+                                />
+                            </div>
+                            <div>
+                                <MudText Class="font-semibold!">
+                                    12,023.54
+                                </MudText>
+                                <MudText Class="text-xs!">
+                                    ≈ $52,313.42
+                                </MudText>
+                            </div>
+                        </MudCard>
+                        <MudCard
+                            Class="bg-[#2B2B4A80]! p-4! flex-row! items-center! justify-between!"
+                        >
+                            <div class="flex items-center gap-2">
+                                <div>
+                                    <MudImage
+                                        Src="/images/misc/token/deno.webp"
+                                        Alt="nft image"
+                                    />
+                                </div>
+                                <div>
+                                    <MudText Class="font-semibold!">
+                                        ADA
+                                    </MudText>
+                                    <MudText Class="text-[var(--mud-palette-success)]! text-[10px]!">
+                                        12.18%
+                                    </MudText>
+                                </div>
+                            </div>
+                            <div>
+                                <MudImage
+                                    Src="/images/misc/graph_placeholder.webp"
+                                    Alt="graph placeholder"
+                                />
+                            </div>
+                            <div>
+                                <MudText Class="font-semibold!">
+                                    12,023.54
+                                </MudText>
+                                <MudText Class="text-xs!">
+                                    ≈ $52,313.42
+                                </MudText>
+                            </div>
+                        </MudCard>
+                        <MudCard
+                            Class="bg-[#2B2B4A80]! p-4! flex-row! items-center! justify-between!"
+                        >
+                            <div class="flex items-center gap-2">
+                                <div>
+                                    <MudImage
+                                        Src="/images/misc/token/snek.webp"
+                                        Alt="nft image"
+                                    />
+                                </div>
+                                <div>
+                                    <MudText Class="font-semibold!">
+                                        ADA
+                                    </MudText>
+                                    <MudText Class="text-[var(--mud-palette-success)]! text-[10px]!">
+                                        12.18%
+                                    </MudText>
+                                </div>
+                            </div>
+                            <div>
+                                <MudImage
+                                    Src="/images/misc/graph_placeholder.webp"
+                                    Alt="graph placeholder"
+                                />
+                            </div>
+                            <div>
+                                <MudText Class="font-semibold!">
+                                    12,023.54
+                                </MudText>
+                                <MudText Class="text-xs!">
+                                    ≈ $52,313.42
+                                </MudText>
+                            </div>
+                        </MudCard>
+                        }
+                    </div>
+            </MudTabPanel>
+            <MudTabPanel
+                Text="NFT"
+                Icon="@IconService.NftIcon"
+                Class="min-w-[144px]!"
+            >
+        
+            </MudTabPanel>
+        </MudTabs>
+    </div>
+</section>

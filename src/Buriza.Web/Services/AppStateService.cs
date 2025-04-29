@@ -1,5 +1,3 @@
-using System.Globalization;
-
 namespace Buriza.Web.Services;
 
 public class AppStateService

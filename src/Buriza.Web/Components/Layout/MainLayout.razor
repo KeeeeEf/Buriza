@@ -1,4 +1,6 @@
-﻿@inherits LayoutComponentBase
+﻿@using Buriza.Web.Components.Common
+
+@inherits LayoutComponentBase
 
 <MudThemeProvider IsDarkMode="@AppStateService.IsDarkMode" Theme="BurizaTheme"/>
 <MudPopoverProvider />
@@ -6,5 +8,6 @@
 <MudSnackbarProvider />
 
 <main>
+    <Header/>
     @Body
 </main>

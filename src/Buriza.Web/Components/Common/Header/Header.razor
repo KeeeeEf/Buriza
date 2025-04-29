@@ -1,0 +1,36 @@
+@namespace Buriza.Web.Components.Common
+
+<header class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] p-4! bg-[var(--mud-palette-appbar-background)]/75 backdrop-blur-md z-10 rounded-lg">
+    <ul class="flex items-center justify-between">
+        <li>
+            <MudIconButton 
+                Icon="@IconService.ReceiveIcon" 
+                Class="[&_.mud-icon-root]:size-7! p-0! text-[var(--mud-palette-text-primary)]! rounded-none!"
+            />
+        </li>
+        <li>
+            <MudIconButton 
+                Icon="@IconService.SendIcon" 
+                Class="[&_.mud-icon-root]:size-7! [&_.mud-icon-root]:text-[10px]! p-0! text-[var(--mud-palette-text-primary)]! rounded-none!"
+            />
+        </li>
+        <li>
+            <MudIconButton 
+                Icon="@IconService.BurizaIcon" 
+                Class="bg-[var(--mud-palette-primary)]! [&_.mud-icon-root]:size-7! p-0! text-[var(--mud-palette-text-primary)]!"
+            />
+        </li>
+        <li>
+            <MudIconButton 
+                Icon="@IconService.HistoryIcon" 
+                Class="[&_.mud-icon-root]:size-7! p-0! text-[var(--mud-palette-text-primary)]! rounded-none!"
+            />
+        </li>
+        <li>
+            <MudIconButton 
+                Icon="@IconService.WalletIcon" 
+                Class="[&_.mud-icon-root]:size-7! p-0! text-[var(--mud-palette-text-primary)]! rounded-none!"
+            />
+        </li>
+    </ul>
+</header>
