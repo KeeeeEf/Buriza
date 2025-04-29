@@ -1,0 +1,10 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider IsDarkMode="@AppStateService.IsDarkMode" Theme="BurizaTheme"/>
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<main>
+    @Body
+</main>
