@@ -1,4 +1,5 @@
-﻿@using Buriza.Web.Components.Common
+﻿@using Buriza.Data.Models.Common
+@using Buriza.Web.Components.Common
 
 @page "/"
 
@@ -100,25 +101,24 @@
                     Portfolio
                 </MudText>
                 <div class="mt-2! flex flex-col gap-2">
-                    @for (int i = 0; i < 3; i++)
+                    @foreach (TokenProfile tokenItem in TokenProfileList)
                     {
                         <MudCard
-                            id="@i"
-                            Class="bg-[var(--mud-palette-background-gray)]/50! p-4! flex-row! items-center! justify-between!"
+                            Class="bg-[var(--mud-palette-background-gray)]/50! p-4! flex-row! gap-2! items-center! justify-between!"
                         >
                             <div class="flex items-center gap-2">
-                                <div>
+                                <div class="size-8!">
                                     <MudImage
-                                        Src="/images/misc/token/ada.webp"
-                                        Alt="nft image"
+                                        Src="@tokenItem.TokenImageSrc"
+                                        Alt="@tokenItem.TokenName"
                                     />
                                 </div>
                                 <div>
                                     <MudText Class="font-semibold!">
-                                        ADA
+                                        @tokenItem.TokenName
                                     </MudText>
                                     <MudText Class="text-[var(--mud-palette-success)]! text-[10px]!">
-                                        12.18%
+                                        @tokenItem.TokenPriceChange%
                                     </MudText>
                                 </div>
                             </div>
@@ -130,192 +130,65 @@
                             </div>
                             <div>
                                 <MudText Class="font-semibold!">
-                                    12,023.54
+                                    @tokenItem.TokenPriceAda.ToString("N2")
                                 </MudText>
-                                <MudText Class="text-xs!">
-                                    ≈ $52,313.42
-                                </MudText>
-                            </div>
-                        </MudCard>
-                        <MudCard
-                            Class="bg-[var(--mud-palette-background-gray)]/50! p-4! flex-row! items-center! justify-between!"
-                        >
-                            <div class="flex items-center gap-2">
-                                <div>
-                                    <MudImage
-                                        Src="/images/misc/token/angels.webp"
-                                        Alt="nft image"
-                                    />
-                                </div>
-                                <div>
-                                    <MudText Class="font-semibold!">
-                                        ADA
-                                    </MudText>
-                                    <MudText Class="text-[var(--mud-palette-success)]! text-[10px]!">
-                                        12.18%
-                                    </MudText>
-                                </div>
-                            </div>
-                            <div>
-                                <MudImage
-                                    Src="/images/misc/graph_placeholder.webp"
-                                    Alt="graph placeholder"
-                                />
-                            </div>
-                            <div>
-                                <MudText Class="font-semibold!">
-                                    12,023.54
-                                </MudText>
-                                <MudText Class="text-xs!">
-                                    ≈ $52,313.42
+                                <MudText Class="text-xs! text-[var(--mud-palette-text-secondary)]! text-right!">
+                                    ≈ $@tokenItem.TokenPriceConversion.ToString("N2")
                                 </MudText>
                             </div>
                         </MudCard>
-                        <MudCard
-                            Class="bg-[var(--mud-palette-background-gray)]/50! p-4! flex-row! items-center! justify-between!"
-                        >
-                            <div class="flex items-center gap-2">
-                                <div>
-                                    <MudImage
-                                        Src="/images/misc/token/chad.webp"
-                                        Alt="nft image"
-                                    />
-                                </div>
-                                <div>
-                                    <MudText Class="font-semibold!">
-                                        ADA
-                                    </MudText>
-                                    <MudText Class="text-[var(--mud-palette-success)]! text-[10px]!">
-                                        12.18%
-                                    </MudText>
-                                </div>
-                            </div>
-                            <div>
-                                <MudImage
-                                    Src="/images/misc/graph_placeholder.webp"
-                                    Alt="graph placeholder"
-                                />
-                            </div>
-                            <div>
-                                <MudText Class="font-semibold!">
-                                    12,023.54
-                                </MudText>
-                                <MudText Class="text-xs!">
-                                    ≈ $52,313.42
-                                </MudText>
-                            </div>
-                        </MudCard>
-                        <MudCard
-                            Class="bg-[var(--mud-palette-background-gray)]/50! p-4! flex-row! items-center! justify-between!"
-                        >
-                            <div class="flex items-center gap-2">
-                                <div>
-                                    <MudImage
-                                        Src="/images/misc/token/charles.webp"
-                                        Alt="nft image"
-                                    />
-                                </div>
-                                <div>
-                                    <MudText Class="font-semibold!">
-                                        ADA
-                                    </MudText>
-                                    <MudText Class="text-[var(--mud-palette-success)]! text-[10px]!">
-                                        12.18%
-                                    </MudText>
-                                </div>
-                            </div>
-                            <div>
-                                <MudImage
-                                    Src="/images/misc/graph_placeholder.webp"
-                                    Alt="graph placeholder"
-                                />
-                            </div>
-                            <div>
-                                <MudText Class="font-semibold!">
-                                    12,023.54
-                                </MudText>
-                                <MudText Class="text-xs!">
-                                    ≈ $52,313.42
-                                </MudText>
-                            </div>
-                        </MudCard>
-                        <MudCard
-                            Class="bg-[var(--mud-palette-background-gray)]/50! p-4! flex-row! items-center! justify-between!"
-                        >
-                            <div class="flex items-center gap-2">
-                                <div>
-                                    <MudImage
-                                        Src="/images/misc/token/deno.webp"
-                                        Alt="nft image"
-                                    />
-                                </div>
-                                <div>
-                                    <MudText Class="font-semibold!">
-                                        ADA
-                                    </MudText>
-                                    <MudText Class="text-[var(--mud-palette-success)]! text-[10px]!">
-                                        12.18%
-                                    </MudText>
-                                </div>
-                            </div>
-                            <div>
-                                <MudImage
-                                    Src="/images/misc/graph_placeholder.webp"
-                                    Alt="graph placeholder"
-                                />
-                            </div>
-                            <div>
-                                <MudText Class="font-semibold!">
-                                    12,023.54
-                                </MudText>
-                                <MudText Class="text-xs!">
-                                    ≈ $52,313.42
-                                </MudText>
-                            </div>
-                        </MudCard>
-                        <MudCard
-                            Class="bg-[var(--mud-palette-background-gray)]/50! p-4! flex-row! items-center! justify-between!"
-                        >
-                            <div class="flex items-center gap-2">
-                                <div>
-                                    <MudImage
-                                        Src="/images/misc/token/snek.webp"
-                                        Alt="nft image"
-                                    />
-                                </div>
-                                <div>
-                                    <MudText Class="font-semibold!">
-                                        ADA
-                                    </MudText>
-                                    <MudText Class="text-[var(--mud-palette-success)]! text-[10px]!">
-                                        12.18%
-                                    </MudText>
-                                </div>
-                            </div>
-                            <div>
-                                <MudImage
-                                    Src="/images/misc/graph_placeholder.webp"
-                                    Alt="graph placeholder"
-                                />
-                            </div>
-                            <div>
-                                <MudText Class="font-semibold!">
-                                    12,023.54
-                                </MudText>
-                                <MudText Class="text-xs!">
-                                    ≈ $52,313.42
-                                </MudText>
-                            </div>
-                        </MudCard>
-                        }
-                    </div>
+                    }
+                </div>
             </MudTabPanel>
             <MudTabPanel
                 Text="NFT"
                 Icon="@IconService.NftIcon"
                 Class="min-w-[144px]!"
             >
-        
+                <MudText
+                    Class="font-semibold! mt-4!"
+                >
+                    Portfolio
+                </MudText>
+                <div class="mt-2! flex flex-col gap-2">
+                    @foreach (NftProfile nftProfileItem in NftProfileList)
+                    {
+                        <MudCard
+                            Class="bg-[var(--mud-palette-background-gray)]/50! p-4! flex-row! gap-2! items-center! justify-between!"
+                        >
+                            <div class="flex items-center gap-2">
+                                <div class="size-8!">
+                                    <MudImage
+                                        Src="@nftProfileItem.NftImageSrc"
+                                        Alt="@nftProfileItem.NftName"
+                                    />
+                                </div>
+                                <div>
+                                    <MudText Class="font-semibold!">
+                                        @nftProfileItem.NftName
+                                    </MudText>
+                                    <MudText Class="text-[var(--mud-palette-text-secondary)]! text-xs! truncate max-w-14">
+                                        @nftProfileItem.Collection
+                                    </MudText>
+                                </div>
+                            </div>
+                            <div>
+                                <MudImage
+                                    Src="/images/misc/graph_placeholder.webp"
+                                    Alt="graph placeholder"
+                                />
+                            </div>
+                            <div>
+                                <MudText Class="font-semibold!">
+                                    $@nftProfileItem.NftPrice
+                                </MudText>
+                                <MudText Class="text-[10px]! text-right! text-[var(--mud-palette-success)]!">
+                                    @nftProfileItem.NftPriceChange
+                                </MudText>
+                            </div>
+                        </MudCard>
+                    }
+                </div>
             </MudTabPanel>
         </MudTabs>
     </div>
