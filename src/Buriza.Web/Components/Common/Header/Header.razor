@@ -1,6 +1,6 @@
 @namespace Buriza.Web.Components.Common
 
-<header class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] p-4! bg-[var(--mud-palette-appbar-background)]/75 backdrop-blur-md z-10 rounded-lg">
+<header class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] px-4! py-2! bg-[var(--mud-palette-appbar-background)]/75 backdrop-blur-md z-10 rounded-lg">
     <ul class="flex items-center justify-between">
         <li>
             <MudIconButton 
@@ -14,12 +14,20 @@
                 Class="[&_.mud-icon-root]:size-7! [&_.mud-icon-root]:text-[10px]! p-0! text-[var(--mud-palette-text-primary)]! rounded-none!"
             />
         </li>
-        <li>
+        <li class="hex relative">
             <MudIconButton 
                 Icon="@IconService.BurizaIcon" 
-                Class="bg-[var(--mud-palette-primary)]! [&_.mud-icon-root]:size-7! p-0! text-[var(--mud-palette-text-primary)]!"
+                Class="absolute inset-0! z-10! [&_.mud-icon-root]:size-7! p-0! text-[var(--mud-palette-text-primary)]!"
             />
         </li>
+        <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />    
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                </filter>
+            </defs>
+        </svg>
         <li>
             <MudIconButton 
                 Icon="@IconService.HistoryIcon" 

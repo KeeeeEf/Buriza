@@ -69,13 +69,13 @@
             <div class="w-full flex items-center justify-between">
                 <MudChip 
                     T="string"
-                    Class="text-[var(--mud-palette-success)]! bg-[#2C2D42]! h-4! px-[6px]! m-0! text-[10px]! font-medium"
+                    Class="text-[var(--mud-palette-success)]! bg-[var(--mud-palette-dark)]! h-4! px-[6px]! m-0! text-[10px]! font-medium"
                 >
                     +$41,1234.95
                 </MudChip>
                 <MudChip 
                     T="string"
-                    Class="text-[var(--mud-palette-success)]! bg-[#2C2D42]! h-4! px-[6px]! m-0! text-[10px]! font-medium"
+                    Class="text-[var(--mud-palette-success)]! bg-[var(--mud-palette-dark)]! h-4! px-[6px]! m-0! text-[10px]! font-medium"
                 >
                     +28.00%
                 </MudChip>
@@ -83,9 +83,11 @@
        </MudCard> 
     </div>
     <div>
+        <MudDivider Absolute Class="top-[286px]"/>
         <MudTabs
             Centered="true"
-            Class="[&_.mud-tabs-tabbar]:bg-transparent!"
+            HideSlider="false"
+            Class="[&_.mud-tabs-tabbar]:bg-transparent! [&_.mud-tab-slider.mud-tab-slider-horizontal]:rounded-full! [&_.mud-tab-slider.mud-tab-slider-horizontal]:h-[3px]!"
         >
             <MudTabPanel
                 Text="Token"
@@ -93,7 +95,7 @@
                 Class="min-w-[144px]!"
             >
                 <MudText
-                    Class="font-semibold! mt-2!"
+                    Class="font-semibold! mt-4!"
                 >
                     Portfolio
                 </MudText>
@@ -102,7 +104,7 @@
                     {
                         <MudCard
                             id="@i"
-                            Class="bg-[#2B2B4A80]! p-4! flex-row! items-center! justify-between!"
+                            Class="bg-[var(--mud-palette-background-gray)]/50! p-4! flex-row! items-center! justify-between!"
                         >
                             <div class="flex items-center gap-2">
                                 <div>
@@ -136,7 +138,7 @@
                             </div>
                         </MudCard>
                         <MudCard
-                            Class="bg-[#2B2B4A80]! p-4! flex-row! items-center! justify-between!"
+                            Class="bg-[var(--mud-palette-background-gray)]/50! p-4! flex-row! items-center! justify-between!"
                         >
                             <div class="flex items-center gap-2">
                                 <div>
@@ -170,7 +172,7 @@
                             </div>
                         </MudCard>
                         <MudCard
-                            Class="bg-[#2B2B4A80]! p-4! flex-row! items-center! justify-between!"
+                            Class="bg-[var(--mud-palette-background-gray)]/50! p-4! flex-row! items-center! justify-between!"
                         >
                             <div class="flex items-center gap-2">
                                 <div>
@@ -204,7 +206,7 @@
                             </div>
                         </MudCard>
                         <MudCard
-                            Class="bg-[#2B2B4A80]! p-4! flex-row! items-center! justify-between!"
+                            Class="bg-[var(--mud-palette-background-gray)]/50! p-4! flex-row! items-center! justify-between!"
                         >
                             <div class="flex items-center gap-2">
                                 <div>
@@ -238,7 +240,7 @@
                             </div>
                         </MudCard>
                         <MudCard
-                            Class="bg-[#2B2B4A80]! p-4! flex-row! items-center! justify-between!"
+                            Class="bg-[var(--mud-palette-background-gray)]/50! p-4! flex-row! items-center! justify-between!"
                         >
                             <div class="flex items-center gap-2">
                                 <div>
@@ -272,7 +274,7 @@
                             </div>
                         </MudCard>
                         <MudCard
-                            Class="bg-[#2B2B4A80]! p-4! flex-row! items-center! justify-between!"
+                            Class="bg-[var(--mud-palette-background-gray)]/50! p-4! flex-row! items-center! justify-between!"
                         >
                             <div class="flex items-center gap-2">
                                 <div>

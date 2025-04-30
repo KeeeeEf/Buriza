@@ -4,3 +4,19 @@
 * {
     font-family: "Poppins", system-ui, sans-serif;
 }
+
+.hex {
+    height: 40px;
+    width: 36px;
+    display: inline-grid;
+    margin: 0 5px;
+    color: var(--mud-palette-primary);
+    filter: url('#goo');
+}
+
+.hex::before {
+    content: "";
+    background: currentColor;
+    clip-path: polygon(0% 25%,0% 75%,50% 100%,100% 75%,100% 25%,50% 0%);
+}
+  
